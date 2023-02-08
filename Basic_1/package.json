@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "colorprint-js": "^1.0.0",
+    "mongoose": "^6.9.1"
+  }
+}
