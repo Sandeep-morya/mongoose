@@ -1,0 +1,31 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+html {
+	background-color: #112;
+}
+body {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center; /* if more line present */
+	align-items: center;
+	font-size: 10rem;
+	font-weight: bold;
+	color: rgba(255, 255, 255, 0.3);
+	letter-spacing: 0.1cm;
+	opacity: 0;
+	user-select: none;
+	margin-left: -10%;
+	transition: all 0.5s ease-in;
+	cursor: none;
+}
+body:hover {
+	opacity: 1;
+	margin-left: 0;
+}
