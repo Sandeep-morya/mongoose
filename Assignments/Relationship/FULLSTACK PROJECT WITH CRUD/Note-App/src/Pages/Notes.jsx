@@ -50,7 +50,8 @@ const Notes = () => {
   }, [])
   return (
     <div>
-      Total Notes = {notes.length}
+      <h1>Total Notes: {notes.length}</h1>
+      <br />
       <br />
       <div className='notes'>
         {notes.map(({ _id, title, body }, index) => (
