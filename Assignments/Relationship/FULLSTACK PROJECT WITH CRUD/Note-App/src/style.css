@@ -1,0 +1,15 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	margin: 1rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+}
+.app{
+	width: 60%;
+	margin: 3rem auto;
+}

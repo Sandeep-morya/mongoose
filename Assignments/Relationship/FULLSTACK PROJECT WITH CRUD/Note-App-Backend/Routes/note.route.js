@@ -16,6 +16,7 @@ noteRoute.use((req, res, next) => {
 		const data = jwt.verify(token, KEY);
 		/* If token not verified it automaticaly goes in catch */
 		req.body.userID = data.user._id;
+		
 		next();
 	} catch (error) {
 		res.status(405).send("not allowed");
@@ -38,9 +39,9 @@ noteRoute.post("/", async (req, res) => {
 
 /* Read */
 noteRoute.get("/", async (req, res) => {
-	const _id = req.body.userID;
+	const { userID } = req.body;
 	try {
-		const notes = await NoteModel.find({ _id });
+		const notes = await NoteModel.find({ userID });
 		res.send({ notes });
 	} catch (error) {
 		res.status(401).send({ error });
