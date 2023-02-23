@@ -1,13 +1,11 @@
 ﻿import axios from 'axios';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import Toast from 'react-bootstrap/Toast';
-import { AuthContext } from '../Components/AuthContextProvider';
 
 function Create() {
-  const { setIsAuth } = useContext(AuthContext)
   const [noteData, setNoteData] = useState({ title: '', body: '' })
   const [show, setShow] = useState(false);
 
@@ -27,7 +25,7 @@ function Create() {
       setNoteData({ title: '', body: '' })
       console.log(data);
     } catch (error) {
-      setMessage("username or Body is Invalid")
+      setMessage("Unable to Post")
       setShow(true)
     }
   }

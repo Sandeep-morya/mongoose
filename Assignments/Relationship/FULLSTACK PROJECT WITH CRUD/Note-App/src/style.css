@@ -13,3 +13,8 @@ a {
 	width: 60%;
 	margin: 3rem auto;
 }
+.notes{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 1rem;
+}

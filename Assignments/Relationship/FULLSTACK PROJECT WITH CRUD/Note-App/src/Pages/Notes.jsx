@@ -4,6 +4,7 @@ import Note from '../Components/Note';
 
 const Notes = () => {
   const [notes, setNotes] = useState([]);
+
   async function getNotes() {
     try {
       const { data } = await axios.get("http://localhost:8080/api/notes", {
@@ -16,17 +17,44 @@ const Notes = () => {
       console.log(error)
     }
   }
+
+  async function handleUpdate(id, noteData) {
+    try {
+      await axios.patch(`http://localhost:8080/api/notes/${id}`, noteData, {
+        headers: {
+          "Authorization": localStorage.getItem("token")
+        }
+      });
+      getNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  async function handleDelete(id) {
+    try {
+      await axios.delete(`http://localhost:8080/api/notes/${id}`, {
+        headers: {
+          "Authorization": localStorage.getItem("token")
+        }
+      });
+      getNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+
   useEffect(() => {
     getNotes()
   }, [])
-  console.log(notes);
   return (
     <div>
       All Notes
       <br />
-      <div>
+      <div className='notes'>
         {notes.map(({ _id, title, body }, index) => (
-          <Note key={_id} {...{ index, title, body }} />
+          <Note key={_id} {...{ id: _id, index, title, body, handleUpdate, handleDelete }} />
         ))}
       </div>
     </div>
