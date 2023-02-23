@@ -15,7 +15,7 @@ function Create() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8080/api/notes", noteData, {
+      const { data } = await axios.post("https://wild-red-spider-shoe.cyclic.app/api/notes", noteData, {
         headers: {
           "Authorization": localStorage.getItem("token")
         }

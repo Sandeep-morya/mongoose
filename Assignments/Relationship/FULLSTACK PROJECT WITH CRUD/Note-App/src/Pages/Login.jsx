@@ -17,7 +17,7 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:8080/api/user/login", formData);
+            const { data } = await axios.post("https://wild-red-spider-shoe.cyclic.app/api/user/login", formData);
             setMessage(data.message + " redirecting to notes in 3s")
             localStorage.setItem("token", data.token)
             setShow(true)

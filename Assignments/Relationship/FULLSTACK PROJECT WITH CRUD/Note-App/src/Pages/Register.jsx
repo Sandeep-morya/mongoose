@@ -16,7 +16,7 @@ const navigate = useNavigate();
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:8080/api/user/register", formData);
+            const { data } = await axios.post("https://wild-red-spider-shoe.cyclic.app/api/user/register", formData);
             setMessage(data.message+" redirecting to Login page")
             setShow(true)
             setTimeout(()=>{

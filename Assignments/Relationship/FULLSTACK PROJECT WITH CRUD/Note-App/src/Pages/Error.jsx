@@ -2,8 +2,8 @@
 
 const Error = () => {
   return (
-    <div>Error</div>
+    <div>I think, You are lost</div>
   )
 }
 
-export default Error
+export default Error;

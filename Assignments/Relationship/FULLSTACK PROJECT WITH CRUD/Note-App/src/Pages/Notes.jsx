@@ -7,7 +7,7 @@ const Notes = () => {
 
   async function getNotes() {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/notes", {
+      const { data } = await axios.get("https://wild-red-spider-shoe.cyclic.app/api/notes", {
         headers: {
           Authorization: localStorage.getItem("token")
         }
@@ -20,7 +20,7 @@ const Notes = () => {
 
   async function handleUpdate(id, noteData) {
     try {
-      await axios.patch(`http://localhost:8080/api/notes/${id}`, noteData, {
+      await axios.patch(`https://wild-red-spider-shoe.cyclic.app/api/notes/${id}`, noteData, {
         headers: {
           "Authorization": localStorage.getItem("token")
         }
@@ -32,7 +32,7 @@ const Notes = () => {
   }
   async function handleDelete(id) {
     try {
-      await axios.delete(`http://localhost:8080/api/notes/${id}`, {
+      await axios.delete(`https://wild-red-spider-shoe.cyclic.app/api/notes/${id}`, {
         headers: {
           "Authorization": localStorage.getItem("token")
         }
@@ -50,7 +50,7 @@ const Notes = () => {
   }, [])
   return (
     <div>
-      All Notes
+      Total Notes = {notes.length}
       <br />
       <div className='notes'>
         {notes.map(({ _id, title, body }, index) => (
